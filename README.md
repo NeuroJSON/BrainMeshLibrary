@@ -105,7 +105,7 @@ To plot a particular tissue segment, one can use the
 white-matter (WM) segment, one can use
 
 ```
-    plotmesh(data.MeshVertex3, data.MeshElem(data.MeshElem(:,5)==5),'x>100');
+    plotmesh(data.MeshVertex3, data.MeshElem(data.MeshElem(:,5)==5,:),'x>100');
 ```
 
 ## Acknowledgement 
