@@ -79,11 +79,11 @@ information such as version and atlas name etc.
 
 The `data.MeshVertex3` is an `N x 3` matrix storing the 
 x/y/z coordinates of all the nodes in the mesh, and 
-`data.MeshElem` stores a `1 x 5` integer array, with the 
+`data.MeshElem` stores a 5-column integer array, with the 
 first 4 columns denoting the indices of the tetrahedral
-elements and the last column denotes the region label.
+elements and the last column denoting the region label.
 The meanings of the labels are defined in the table 
-defined in `data._DataInfo_.ROIBrainROILabels`.
+stored as `data.x0x5F_DataInfo_.ROIBrainROILabels`.
 
 To plot or process the loaded mesh, one need to install 
 the Iso2Mesh toolbox from
