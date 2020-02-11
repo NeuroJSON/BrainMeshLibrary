@@ -13,10 +13,7 @@
 
 This library is described in the following paper pre-print:
 
-* Anh Phong Tran and Qianqian Fang, "Fast and high-quality 
-  tetrahedral mesh generation from neuroanatomical scans,". 
-  In: arXiv pre-print (August 2017). arXiv:1708.08954v1 [physics.med-ph] 
-  URL: https://arxiv.org/abs/1708.08954
+* Anh Phong Tran†, Shijie Yan†, Qianqian Fang*, (2020) "Improving model-based fNIRS analysis using mesh-based anatomical and light-transport models," Neurophotonics, in press, pre-print: https://www.biorxiv.org/content/10.1101/2020.02.07.939447v1
 
 ## How to download
 
