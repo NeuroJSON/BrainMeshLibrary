@@ -13,7 +13,7 @@
 
 This library is described in the following paper pre-print:
 
-* Anh Phong Tran†, Shijie Yan†, Qianqian Fang*, (2020) "Improving model-based fNIRS analysis using mesh-based anatomical and light-transport models," Neurophotonics, in press, pre-print: https://www.biorxiv.org/content/10.1101/2020.02.07.939447v1
+* Anh Phong Tran†, Shijie Yan†, Qianqian Fang*, (2020) "Improving model-based fNIRS analysis using mesh-based anatomical and light-transport models," Neurophotonics,  7(1), 015008, URL: http://dx.doi.org/10.1117/1.NPh.7.1.015008
 
 ## How to download
 
