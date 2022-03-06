@@ -4,14 +4,14 @@
   * Computational Optics and Translational Imaging (COTI) Lab, http://fanglab.org
   * Northeastern University
   * 360 Huntington Ave, Boston, MA 02115
-* Version: 0.5
+* Version: 0.6
 * License: CC-BY-SA (Creative Commons-Attribution-ShareAlike 4.0)
 * URL: http://mcx.space/brain2mesh
-* Project website: http://openjdata.org
+* Project website: http://neurojson.org
 
 ## Introduction 
 
-This library is described in the following paper pre-print:
+This library is described in the following paper:
 
 * Anh Phong Tran†, Shijie Yan†, Qianqian Fang*, (2020) "Improving model-based fNIRS analysis using mesh-based anatomical and light-transport models," Neurophotonics,  7(1), 015008, URL: http://dx.doi.org/10.1117/1.NPh.7.1.015008
 
@@ -20,19 +20,19 @@ This library is described in the following paper pre-print:
 To download the latest version of the entire brain mesh library, you 
 may use the below link
 
-https://github.com/OpenJData/BrainMeshLibrary/archive/master.zip
+https://github.com/NeuroJSON/BrainMeshLibrary/archive/master.zip
 
 or use the below git command
 ```
-    git clone https://github.com/OpenJData/BrainMeshLibrary.git
+    git clone https://github.com/NeuroJSON/BrainMeshLibrary.git
 ```
 
 To download the latest release (stable version), please browse
 
-https://github.com/OpenJData/BrainMeshLibrary/releases
+https://github.com/NeuroJSON/BrainMeshLibrary/releases
 
 If you only need to download a particular brain mesh model, you 
-may browse https://github.com/OpenJData/BrainMeshLibrary
+may browse https://github.com/NeuroJSON/BrainMeshLibrary
 and select the mesh file (.jmsh) and click on the "Download" button.
 
 ## How to use
@@ -40,7 +40,7 @@ and select the mesh file (.jmsh) and click on the "Download" button.
 The mesh data in this mesh library are stored in the JSON/JMesh 
 format. The JMesh data format is a JSON-compatible data annotation 
 open-standard defined in the JMesh Specification 
-(http://github.com/fangq/jmesh).
+(http://github.com/NeuroJSON/jmesh).
 
 The data files in this library are essentially JSON files. One
 can open these files using any JSON parser, widely avaialble 
@@ -64,7 +64,7 @@ then, the data files can be loaded by
 data = 
 
     x0x5F_DataInfo_: [1x1 struct]
-        MeshVertex3: [256537x3 single]
+           MeshNode: [256537x3 single]
            MeshElem: [1567340x5 uint32]
 ```
 where the `/path/to/filename.jmsh` should be replaced by the 
@@ -74,7 +74,7 @@ The loaded mesh contains a metadata record (`x0x5F_DataInfo_`
 in MATLAB and `_DataInfo_` in Octave), storing the mesh
 information such as version and atlas name etc.
 
-The `data.MeshVertex3` is an `N x 3` matrix storing the 
+The `data.MeshNode` is an `N x 3` matrix storing the 
 x/y/z coordinates of all the nodes in the mesh, and 
 `data.MeshElem` stores a 5-column integer array, with the 
 first 4 columns denoting the indices of the tetrahedral
@@ -89,11 +89,11 @@ the Iso2Mesh toolbox from
 
 Similarly, after installing the toolbox, one need to run
 ```
-    plotmesh(data.MeshVertex3, data.MeshElem);
+    plotmesh(data.MeshNode, data.MeshElem);
 ```
 or
 ```
-    plotmesh(data.MeshVertex3, data.MeshElem,'x>100');
+    plotmesh(data.MeshNode, data.MeshElem,'x>100');
 ```
 to plot a cross-section of the mesh.
 
@@ -102,13 +102,11 @@ To plot a particular tissue segment, one can use the
 white-matter (WM) segment, one can use
 
 ```
-    plotmesh(data.MeshVertex3, data.MeshElem(data.MeshElem(:,5)==5,:),'x>100');
+    plotmesh(data.MeshNode, data.MeshElem(data.MeshElem(:,5)==5,:),'x>100');
 ```
 
 ## Acknowledgement 
 
 This project is funded by the National Institutes of Health (NIH) / 
-National Institute of General Medical Sciences (NIGMS) grant# 
-R01-GM114365 (PI: Fang), Natonal Cancer Institute (NCI) grant# 
-R01-CA204443 (PI: Fang), and National Institute of Neurological 
-Disorders and Stroke (NINDS) grant# R01-EB026998 (PI: Fang).
+Neurological Disorders and Stroke (NINDS) grant# U24-NS124027 and R01-EB026998 (PI: Fang),
+National Institute of General Medical Sciences (NIGMS) grant# R01-GM114365 (PI: Fang).
