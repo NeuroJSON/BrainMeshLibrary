@@ -9,6 +9,23 @@
 * URL: http://mcx.space/brain2mesh
 * Project website: http://neurojson.org
 
+## What's New
+
+The [NeuroJSON](http://neurojson.org) [JData](https://github.com/NeuroJSON/jdata)/[JMesh](https://github.com/NeuroJSON/jmesh) 
+specifications are now officially funded by the National Institute of Health (NIH) and National Institute of Neurological
+Disorders and Stroke (NINDS) under grant# [U24-NS124027](https://reporter.nih.gov/project-details/10308329).
+
+Starting from V0.6, we include the originally excluded scalp, skull and CSF mesh layers for all Neurodevelopmental
+MRI atlas meshes. The segmentations of the CSF and skull layers were created using SPM12. For atlases of younger
+populations, the SPM segmentations may not be accurate as they were computed based on an adult head template. The scalp
+surfaces were extracted from the T1 MRI image using a threshold-based method. Details regarding processing steps 
+of these tissue types can be found in Section 3.3 and Fig. 9 of [our paper](http://dx.doi.org/10.1117/1.NPh.7.1.015008).
+
+Please be cautious when using meshes of these tissue layers, especially in the younger populations, in your analyses.
+Although they were generated using the best tools that are currently available, understanding their known limitations
+helps to avoid inaccurate conclusions derived from this mesh data library.
+
+
 ## Introduction 
 
 This library is described in the following paper:
@@ -107,6 +124,6 @@ white-matter (WM) segment, one can use
 
 ## Acknowledgement 
 
-This project is funded by the National Institutes of Health (NIH) / 
-Neurological Disorders and Stroke (NINDS) grant# U24-NS124027 and R01-EB026998 (PI: Fang),
+This project is funded by the National Institutes of Health (NIH) / National Institute 
+of Neurological Disorders and Stroke (NINDS) grant# U24-NS124027 and R01-EB026998 (PI: Fang),
 National Institute of General Medical Sciences (NIGMS) grant# R01-GM114365 (PI: Fang).
